@@ -335,4 +335,6 @@ def delete(name):
 def logout(): session.clear(); return redirect(url_for("login"))
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=3522, debug=True)
+    port = int(os.environ.get("PORT", 10000))  # Render को पोर्ट लिने, नभए 10000 प्रयोग गर्ने
+    app.run(host="0.0.0.0", port=port)
+
